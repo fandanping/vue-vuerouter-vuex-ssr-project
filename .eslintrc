@@ -1,0 +1,9 @@
+{
+  "extends":"standard" , /*可以使用eslint工具校验我们的代码*/
+  "plugins":[
+    "html"
+  ],
+  "parser":"babel-eslint"
+
+
+}
