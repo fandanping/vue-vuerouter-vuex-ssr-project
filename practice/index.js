@@ -7,7 +7,7 @@ new Vue({
 })
 */
 
-import './lifecycle/index'
-
+/*import './lifecycle/index'*/
+import  './data-binding/index'
 
 
