@@ -12,4 +12,6 @@ new Vue({
 
 /*import  './computed/index'*/
 
-import  './directive/index'
+/*import  './directive/index'*/
+
+import  './components/define/index'
