@@ -14,4 +14,7 @@ new Vue({
 
 /*import  './directive/index'*/
 
-import  './components/define/index'
+/*import  './components/define/index'*/
+
+/*import  './components/extendss/extends'*/
+import './components/v-model/v-model'
