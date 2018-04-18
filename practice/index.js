@@ -18,4 +18,5 @@ new Vue({
 
 /*import  './components/extendss/extends'*/
 /*import './components/v-model/v-model'*/
-import './components/features/index'
+/*import './components/features/index'*/
+import './components/render/index'

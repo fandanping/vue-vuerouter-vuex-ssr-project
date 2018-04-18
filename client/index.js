@@ -1,6 +1,8 @@
 // 入口文件
 import Vue from 'vue'
+import VueRouter from 'vue-router'
 import App from './app.vue'
+
 /*
 import './assets/styles/test.css'
 import  './assets/images/23c33fc14463b2b68f4528242994c47e.jpg'
@@ -9,9 +11,13 @@ import  './assets/styles/test-styles.styl'
 */
 
 import './assets/styles/global.styl'
+import createRouter from './config/router'
+Vue.use(VueRouter)
+const router=createRouter()
 
-const root = document.createElement('div')
-document.body.appendChild(root)
+/*const root = document.createElement('div')
+document.body.appendChild(root)*/
 new Vue({
+  router,
   render: (h) => h(App)
-}).$mount(root)
+}).$mount('#root')

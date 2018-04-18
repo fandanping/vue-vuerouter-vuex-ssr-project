@@ -19,6 +19,10 @@
                 @toggle="toggleFilter"
                 @clearAllCompleted="clearAllCompleted"
         />
+      <transition name="fade">
+        <router-view></router-view>
+      </transition>
+
     </section>
 </template>
 
@@ -27,6 +31,10 @@
     import Tabs from './tabs.vue'
     let id = 0
     export default {
+      props:['id'],
+      mounted(){
+         console.log(this.id);
+      },
       data () {
         return {
           todos: [],
