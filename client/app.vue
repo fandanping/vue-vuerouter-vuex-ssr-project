@@ -4,11 +4,13 @@
         <Header></Header>
      <!-- <todo></todo>-->
      <!-- <router-link :to="{name:'app'}">app</router-link>-->
-      <router-link to="/app/123">app</router-link>
+      <router-link to="/app/123">app123</router-link>
+      <router-link to="/app/456">app456</router-link>
       <router-link to="/login">login</router-link>
       <router-link to="/login/exact">login-exact</router-link>
       <router-view></router-view>
       <Footer></Footer>
+     <!-- <router-view name="a"></router-view>-->
     </div>
 </template>
 
@@ -49,5 +51,10 @@
         z-index -1
     }
 </style>
+
+
+
+
+
 
 

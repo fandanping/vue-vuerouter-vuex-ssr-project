@@ -31,9 +31,26 @@
     import Tabs from './tabs.vue'
     let id = 0
     export default {
+      beforeRouteEnter(to,from,next){
+         console.log('todo  enter',this);
+         next(vm =>{
+           console.log('after enter vm.id is',vm.id)
+         })
+      },
+      beforeRouteUpdate(to,from,next){
+        console.log('todo  update');
+        next()
+      },
+      beforeRouteLeave(to,from,next){
+        console.log('todo  leave');
+        if(global.confirm('are you sure?')){
+          next()
+        }
+
+      },
       props:['id'],
       mounted(){
-         console.log(this.id);
+         console.log('todo mounted');
       },
       data () {
         return {

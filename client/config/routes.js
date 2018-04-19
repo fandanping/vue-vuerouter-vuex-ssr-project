@@ -7,7 +7,14 @@ export default [
   },
   {
    /* path:'/app/:id',*/
-    path:'/app',
+    path:'/app/:id',
+    props:true,
+    /*component:() => import('../views/todo/todo.vue'),*/
+    component:Todo,
+   /* components:{
+       default:Todo,
+       a:Login
+    },*/
 /*    props:true,*/
      /*props:{
        id:'456'
@@ -15,11 +22,15 @@ export default [
   /*  props:(route) =>({
          id:route.query.b
     }),*/
-    component:Todo,
+/*    component:Todo,*/
     name:'app',
     meta:{
        title:'this is app',
-      description:'asasas'
+       description:'asasas'
+    },
+    beforeEnter(to,from,next){
+        console.log('app route before enter');
+        next()
     },
     children:[
       {
@@ -31,6 +42,10 @@ export default [
   {
     path:'/login',
     component:Login
+   /* components:{
+       default:Login,
+       a:Todo
+    }*/
   },{
     path:'/login/exact',
     component:Login
