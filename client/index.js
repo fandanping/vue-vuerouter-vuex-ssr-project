@@ -1,6 +1,8 @@
 // 入口文件
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import Vuex from 'vuex'
+/*import Vue from 'vue'*/
 import App from './app.vue'
 
 /*
@@ -12,8 +14,17 @@ import  './assets/styles/test-styles.styl'
 
 import './assets/styles/global.styl'
 import createRouter from './config/router'
+import createStore from './store/store'
 Vue.use(VueRouter)
+Vue.use(Vuex)
 const router=createRouter()
+const store=createStore()
+
+store.registerModule('c',{
+  state:{
+    text:3
+  }
+})
 
 //路由跳转时，会触发此钩子
 router.beforeEach((to,from,next)=>{
@@ -39,5 +50,6 @@ router.afterEach((to,from)=>{
 document.body.appendChild(root)*/
 new Vue({
   router,
+  store,
   render: (h) => h(App)
 }).$mount('#root')
