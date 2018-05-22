@@ -29,17 +29,19 @@ const config={
                 loader:'babel-loader'
             },
             {
+              //做到代码转成ES5了
                test:/\.js$/,
                loader:'babel-loader',
-               exclude:/node_modules/
+               exclude:/node_modules/    //排除掉node_modules，优化打包速度
             }, {
                 test:/\.(gif|jpg|jpeg|png|svg)$/,
                 use:[
                     {
                         loader:'url-loader',
                         options:{
-                            limit:1024,
+                            limit:1024,//小于1k的图片自动转成base64格式，并且不会存在实体图片
                             name:'resources/[path][name].[hash:8].[ext]'
+                            //outPath :  图片打包后存放的目录
                         }
                     }
 

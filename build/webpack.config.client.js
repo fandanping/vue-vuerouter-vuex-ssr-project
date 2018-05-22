@@ -4,6 +4,7 @@ const webpack=require('webpack')
 var merge =require('webpack-merge')
 const Extractplugin=require('extract-text-webpack-plugin')
 const baseConfig=require('./webpack.config.base')
+const VueClientPlugin=require('vue-server-renderer/client-plugin');
 
 const isDev=process.env.NODE_ENV ==='development'
 const defaultPlugins=[
@@ -14,7 +15,8 @@ const defaultPlugins=[
     }),
     new HTMLPlugin({
       template:path.join(__dirname,'template.html')
-    })
+    }),
+    new VueClientPlugin()
 
 ]
 const devServer={
@@ -26,7 +28,7 @@ const devServer={
      historyApiFallback:{
        index:'/public/index.html'
      }
-    ,hot:true
+    ,hot:true   //开启热更新   会在不刷新页面的情况下直接修改掉，这样就实现了热更新
 }
 let config
 if(isDev){
@@ -60,7 +62,7 @@ if(isDev){
         },
         devServer,
         plugins:defaultPlugins.concat([
-            new webpack.HotModuleReplacementPlugin(),
+            new webpack.HotModuleReplacementPlugin(),  // // 热替换，热替换不是刷新
             new webpack.NoEmitOnErrorsPlugin()
         ])
 
